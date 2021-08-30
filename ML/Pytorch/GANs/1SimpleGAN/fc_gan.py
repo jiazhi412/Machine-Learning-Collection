@@ -61,7 +61,8 @@ writer_real = SummaryWriter(f"logs/real")
 step = 0
 
 for epoch in range(num_epochs):
-    for batch_idx, (real, _) in enumerate(loader):
+    for batch_idx, (real, labels) in enumerate(loader):
+        # print(dummy.size())
         real = real.view(-1, 784).to(device)
         batch_size = real.shape[0]
 
